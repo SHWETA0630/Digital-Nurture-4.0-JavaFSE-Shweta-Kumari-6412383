@@ -2,7 +2,6 @@ package BuilderPatternExample;
 
 public class Main {
     public static void main(String[] args) {
-        // Building a gaming PC
         Computer gamingPC = new Computer.Builder()
                 .setCpu("Intel i9")
                 .setRam("32GB")
@@ -14,7 +13,7 @@ public class Main {
         gamingPC.specs();
 
         System.out.println("\nOffice PC Specs:");
-        // Building an office PC
+        
         Computer officePC = new Computer.Builder()
                 .setCpu("Intel i5")
                 .setRam("16GB")

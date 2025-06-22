@@ -1,13 +1,11 @@
 package BuilderPatternExample;
 
 public class Computer {
-    // Required and optional parts
     private final String cpu;
     private final String ram;
     private final String storage;
     private final String graphicsCard;
 
-    // Private constructor, only Builder can create Computer
     private Computer(Builder builder) {
         this.cpu = builder.cpu;
         this.ram = builder.ram;
@@ -22,7 +20,6 @@ public class Computer {
         System.out.println("Graphics Card: " + graphicsCard);
     }
 
-    // Static nested Builder class
     public static class Builder {
         private String cpu;
         private String ram;
