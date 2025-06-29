@@ -1,0 +1,12 @@
+CREATE OR REPLACE PROCEDURE ProcessMonthlyInterest AS
+BEGIN
+  FOR acc IN (SELECT AccountID, Balance FROM SavingsAccounts) LOOP
+    UPDATE SavingsAccounts
+    SET Balance = Balance + (Balance * 0.01)
+    WHERE AccountID = acc.AccountID;
+  END LOOP;
+
+  COMMIT;
+  DBMS_OUTPUT.PUT_LINE('Monthly interest applied to all savings accounts.');
+END;
+/
